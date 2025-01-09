@@ -1,6 +1,6 @@
 const Logger = require('./Logger');
 const UserRoleEnum = require("../enum/UserRoleEnum");
-const Food = require('../entity/Food');
+const {Food, ExtraFood} = require('../entity/Food');
 
 class Command {
     constructor(name, description, usage, minimumCredential, handler) {

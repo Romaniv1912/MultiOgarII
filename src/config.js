@@ -99,6 +99,7 @@ module.exports = Object.seal({
 "foodMaxSize": 20,
 "foodAmount": 700,
 "foodMassGrow": 1,
+"extraFoodChance": 0.01,
 
 // [VIRUSES]
 // virusMinSize: Minimum virus size. (vanilla: mass: val*val/100: 100 mass)

@@ -681,11 +681,19 @@ class Server {
         this.addNode(cell);
     }
     spawnFood() {
-        var cell = new Entity.Food(this, null, this.randomPos(), this.config.foodMinSize);
-        if (this.config.foodMassGrow) {
-            var maxGrow = this.config.foodMaxSize - cell.radius;
-            cell.setSize(cell.radius += maxGrow * Math.random());
+        let cell;
+
+        if (Math.random() < this.config.extraFoodChance)
+            cell = new Entity.ExtraFood(this, null, this.randomPos(), 10);
+        else {
+            cell = new Entity.Food(this, null, this.randomPos(), this.config.foodMinSize);
+
+            if (this.config.foodMassGrow) {
+                var maxGrow = this.config.foodMaxSize - cell.radius;
+                cell.setSize(cell.radius += maxGrow * Math.random());
+            }
         }
+
         cell.color = this.getRandomColor();
         this.addNode(cell);
     }
