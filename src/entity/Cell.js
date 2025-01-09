@@ -5,6 +5,7 @@ class Cell {
         this.server = server;
         this.owner = owner; // Client that owns this cell
         this.color = { r: 0, g: 0, b: 0 };
+        this.dir = {x: 0, y: 0};
         this._radius2 = 0;
         this.radius = 0;
         this._mass = 0;
