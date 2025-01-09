@@ -175,6 +175,9 @@ class UpdateNodes {
             writer.writeUInt32(cellX >> 0); // Coordinate X
             writer.writeUInt32(cellY >> 0); // Coordinate Y
             writer.writeUInt16(node.radius >>> 0); // Cell Size (not to be confused with mass, because mass = size*size/100)
+            writer.writeUInt16(node.type >>> 0);
+            writer.writeUInt32(node.dir.x >> 0);
+            writer.writeUInt32(node.dir.y >> 0);
             var flags = 0;
             if (node.isVirus)
                 flags |= 0x01; // isVirus
@@ -209,6 +212,9 @@ class UpdateNodes {
             writer.writeUInt32(cellX >> 0); // Coordinate X
             writer.writeUInt32(cellY >> 0); // Coordinate Y
             writer.writeUInt16(node.radius >>> 0); // Cell Size (not to be confused with mass, because mass = size*size/100)
+            writer.writeUInt16(node.type >>> 0);
+            writer.writeUInt32(node.dir.x >> 0);
+            writer.writeUInt32(node.dir.y >> 0);
             var flags = 0;
             if (node.isVirus)
                 flags |= 0x01; // isVirus
