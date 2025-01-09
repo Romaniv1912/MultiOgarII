@@ -513,7 +513,8 @@ class Server {
         var d = client.mouse.difference(cell.position);
         var move = cell.getSpeed(d.dist()); // movement speed
         if (!move) return; // avoid jittering
-        cell.position.add(d.product(move));
+        cell.dir = d.product(move);
+        cell.position.add(cell.dir);
         // update remerge
         var time = this.config.playerRecombineTime, base = Math.max(time, cell.radius * 0.2) * 25;
         // instant merging conditions
